@@ -1,0 +1,31 @@
+[package]
+name = "bresenham"
+version = "0.1.0"
+authors = ["Simon Auch <auchsimon@googlemail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[profile.bench]
+#opt-level = 3
+#debug = false
+#rpath = false
+#lto = true
+#debug-assertions = false
+codegen-units = 1
+panic = 'unwind'
+#panic = 'abort'
+#incremental = false
+#overflow-checks = false
+
+
+[[bench]]
+name = "bresenham_2D"
+harness = false
+
+[dev-dependencies]
+criterion = "0.3"
+rand = "0.7"
+
+[dependencies]
+num-traits = "*"
